@@ -121,8 +121,10 @@ A cada etapa, pretendo documentar os avanços no **GitHub** e compartilhar apren
 
 ## 📸 Prévia
 
-<img width="800" src="https://github.com/user-attachments/assets/20eaf0c8-b0da-454e-9e09-2e5934b58afa" alt="Swagger UI">
-<img width="800" src="https://github.com/user-attachments/assets/deb802a6-5e88-4914-ab3a-7cf6c56cfeda" alt="Postman Preview">
+<img width="1237" height="665" alt="swagger" src="https://github.com/user-attachments/assets/00836eaf-609a-4d27-a99d-a78d168a1947" />
+<img width="1176" height="959" alt="estrutura" src="https://github.com/user-attachments/assets/1eeb2a24-f972-4137-a66a-42dd6edcbd84" />
+<img width="1365" height="845" alt="postman" src="https://github.com/user-attachments/assets/700592b0-fdb3-4eae-bd22-80288f41273a" />
+
 
 ---
 

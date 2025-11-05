@@ -33,27 +33,30 @@ O foco é construir um **sistema de agendamento inteligente** para profissionais
 
 ## 🏗️ Estrutura do Projeto
 
-O projeto segue uma estrutura modular e limpa:
+O projeto segue uma estrutura modular e limpa, organizada da seguinte forma:
 
 com.agendify
 ├── core
-│ ├── config # Configurações globais (Security, Swagger, etc.)
-│ ├── exception # Exceções personalizadas
-│ ├── mapper # BaseMapper genérico
-│ └── util # Utilitários e constantes
+│ ├── config → Configurações globais (Security, Swagger, etc.)
+│ ├── exception → Exceções personalizadas
+│ ├── mapper → BaseMapper genérico
+│ └── util → Utilitários e constantes
 │
 └── agendamento
-├── controller # Controladores REST
-├── dto # DTOs de entrada e saída
-├── model # Entidades (JPA)
-├── repository # Interfaces do Spring Data
-├── service # Regras de negócio
-└── mapper # Implementações específicas de mapeamento
-
-yaml
-Copiar código
+├── controller → Controladores REST
+├── dto → DTOs de entrada e saída
+├── model → Entidades (JPA)
+├── repository → Interfaces do Spring Data
+├── service → Regras de negócio
+└── mapper → Implementações específicas de mapeamento
 
 ---
+
+## 🔐 Autenticação e Segurança
+
+O **Agendify** utiliza autenticação **HTTP Basic Auth**, com usuários em memória configurados via `SecurityConfig`.
+
+**Credenciais padrão:**
 
 ## 🔐 Autenticação e Segurança
 
@@ -63,8 +66,7 @@ Atualmente, o projeto utiliza **autenticação básica (HTTP Basic Auth)** com u
 Usuário: admin
 Senha: 1234
 
-yaml
-Copiar código
+
 
 🔒 O próximo passo será evoluir essa autenticação para **JWT** e integração com a entidade `Usuário`.
 
@@ -79,8 +81,6 @@ Copiar código
 GET /api/agendamentos
 POST /api/agendamentos
 
-css
-Copiar código
 
 Exemplo de `POST`:
 json

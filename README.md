@@ -83,45 +83,49 @@ css
 Copiar código
 
 Exemplo de `POST`:
-```json
+json
 {
   "cliente": "Samuel",
   "servico": "Agendamento",
   "dataHora": "2025-11-05T15:20:00Z",
   "status": "Ativo"
 }
-🧩 Próximos Passos
- Criar estrutura base do projeto
+## 🧩 Próximos Passos
 
- Implementar BaseMapper genérico
+- [x] Criar estrutura base do projeto  
+- [x] Implementar BaseMapper genérico  
+- [x] Configurar Spring Security e Swagger  
+- [ ] Criar entidade **Usuário**  
+- [ ] Implementar autenticação com **JWT**  
+- [ ] Adicionar testes automatizados  
+- [ ] Configurar **Docker Compose** (App + DB)  
+- [ ] Fazer deploy na **nuvem (Render/Railway)**  
 
- Configurar Spring Security e Swagger
+---
 
- Criar entidade Usuário
+## 💡 Objetivo
 
- Implementar autenticação com JWT
+Este projeto é um **laboratório de aprendizado e evolução profissional**, explorando boas práticas de backend moderno, arquitetura limpa e design modular.  
+A cada etapa, pretendo documentar os avanços no **GitHub** e compartilhar aprendizados no **LinkedIn**.
 
- Adicionar testes automatizados
+---
 
- Configurar Docker Compose (App + DB)
+## 🧑‍💻 Autor
 
- Fazer deploy na nuvem (Render/Railway)
-
-💡 Objetivo
-Este projeto é um laboratório de aprendizado e evolução profissional, explorando boas práticas de backend moderno, arquitetura limpa e design modular.
-A cada etapa, pretendo documentar os avanços no GitHub e compartilhar aprendizados no LinkedIn.
-
-🧑‍💻 Autor
-Samuel Figueiredo
-📍 PUC Minas — Sistemas de Informação
-🔗 [LinkedIn](https://www.linkedin.com/in/samuelfigueired/)
+**Samuel Figueiredo**  
+📍 PUC Minas — Sistemas de Informação  
+🔗 [LinkedIn](https://linkedin.com/in/samuelfigueired)  
 💻 [GitHub](https://github.com/samuelfigueired)
 
-📸 Prévia
-<img width="1763" height="806" alt="image" src="https://github.com/user-attachments/assets/20eaf0c0-b0da-454e-9ed9-2e593485a8fa" />
-<img width="1763" height="806" alt="image" src="https://github.com/user-attachments/assets/eb6802a6-5e08-4914-ab3a-7cfe66cfeed3" />
+---
 
+## 📸 Prévia
 
+<img width="800" src="https://github.com/user-attachments/assets/20eaf0c8-b0da-454e-9e09-2e5934b58afa" alt="Swagger UI">
+<img width="800" src="https://github.com/user-attachments/assets/deb802a6-5e88-4914-ab3a-7cf6c56cfeda" alt="Postman Preview">
 
+---
 
-<p align="center"> Feito com 💚 por <b>Samuel Figueiredo</b> — Aprendizado contínuo em Java & Spring 🚀 </p> ```
+<p align="center">
+  Feito com 💚 por <b>Samuel Figueiredo</b> — Aprendizado contínuo em Java & Spring 🚀
+</p>

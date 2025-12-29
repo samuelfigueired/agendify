@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/agendamentos")
+@RequestMapping("/agendamentos")
 @Tag(name = "Agendamentos", description = "Endpoints de gerenciamento de agendamentos")
 public class AgendamentoController {
 

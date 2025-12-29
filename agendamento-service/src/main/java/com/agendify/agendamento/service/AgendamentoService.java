@@ -36,7 +36,7 @@ public class AgendamentoService {
         String random = UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         entity.setNumeroAgd(String.format("AGD-%s-%s", ano, random));
 
-        if (entity.getStatus() == null || entity.getStatus().isBlank()) {
+         if (entity.getStatus() == null || entity.getStatus().isBlank()) {
             entity.setStatus("PENDENTE");
         }
 

@@ -1,133 +1,32 @@
-<h1 align="center">🧠 Agendify — Sistema de Agendamento Inteligente</h1>
+# Agendify 🚀
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-21-red?logo=openjdk" />
-  <img src="https://img.shields.io/badge/Spring_Boot-3.5.6-brightgreen?logo=springboot" />
-  <img src="https://img.shields.io/badge/PostgreSQL-15-blue?logo=postgresql" />
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
-</p>
+Sistema de agendamento inteligente para profissionais autônomos.
 
----
+## 🧠 Objetivo
+Projeto criado com foco em boas práticas, arquitetura limpa e aprendizado contínuo,
+simulando um cenário real de produção.
 
-## 🚀 Sobre o Projeto
+## 🛠️ Tecnologias
+- Java 21
+- Spring Boot 3.5
+- Spring Security + JWT
+- JPA / Hibernate
+- PostgreSQL
+- Flyway
+- MapStruct
+- Swagger OpenAPI
 
-O **Agendify** é um projeto pessoal em desenvolvimento, criado com o objetivo de **aprimorar minhas habilidades como desenvolvedor** e aplicar boas práticas de **arquitetura limpa (Clean Architecture)**, separação de responsabilidades e uso de tecnologias modernas do ecossistema **Spring Boot**.
+## 🔐 Segurança
+- Autenticação stateless com JWT
+- Roles (USER / ADMIN)
+- Filtro customizado com Spring Security
+- Criação de usuário admin via Flyway
 
-O foco é construir um **sistema de agendamento inteligente** para profissionais autônomos, com autenticação, controle de usuários e interface de API documentada.
+## 📌 Status do projeto
+Em desenvolvimento 🚧
 
----
-
-## ⚙️ Tecnologias Utilizadas
-
-- **Java 21**
-- **Spring Boot 3.5.6**
-- **Spring Data JPA**
-- **Spring Security (Basic Auth)**
-- **Swagger (Springdoc OpenAPI)**
-- **MapStruct**
-- **Flyway**
-- **PostgreSQL**
-- **Lombok**
-
----
-
-## 🏗️ Estrutura do Projeto
-
-O projeto segue uma estrutura modular e limpa, organizada da seguinte forma:
-
-com.agendify
-├── core
-│ ├── config → Configurações globais (Security, Swagger, etc.)
-│ ├── exception → Exceções personalizadas
-│ ├── mapper → BaseMapper genérico
-│ └── util → Utilitários e constantes
-│
-└── agendamento
-├── controller → Controladores REST
-├── dto → DTOs de entrada e saída
-├── model → Entidades (JPA)
-├── repository → Interfaces do Spring Data
-├── service → Regras de negócio
-└── mapper → Implementações específicas de mapeamento
-
----
-
-## 🔐 Autenticação e Segurança
-
-O **Agendify** utiliza autenticação **HTTP Basic Auth**, com usuários em memória configurados via `SecurityConfig`.
-
-**Credenciais padrão:**
-
-## 🔐 Autenticação e Segurança
-
-Atualmente, o projeto utiliza **autenticação básica (HTTP Basic Auth)** com usuários configurados em memória através do `SecurityConfig`.
-
-**Credenciais padrão:**
-Usuário: admin
-Senha: 1234
-
-
-
-🔒 O próximo passo será evoluir essa autenticação para **JWT** e integração com a entidade `Usuário`.
-
----
-
-## 📚 Endpoints Principais
-
-**Swagger UI:**  
-👉 [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
-
-**Endpoints REST:**
-GET /api/agendamentos
-POST /api/agendamentos
-
-
-Exemplo de `POST`:
-json
-{
-  "cliente": "Samuel",
-  "servico": "Agendamento",
-  "dataHora": "2025-11-05T15:20:00Z",
-  "status": "Ativo"
-}
-## 🧩 Próximos Passos
-
-- [x] Criar estrutura base do projeto  
-- [x] Implementar BaseMapper genérico  
-- [x] Configurar Spring Security e Swagger  
-- [ ] Criar entidade **Usuário**  
-- [ ] Implementar autenticação com **JWT**  
-- [ ] Adicionar testes automatizados  
-- [ ] Configurar **Docker Compose** (App + DB)  
-- [ ] Fazer deploy na **nuvem (Render/Railway)**  
-
----
-
-## 💡 Objetivo
-
-Este projeto é um **laboratório de aprendizado e evolução profissional**, explorando boas práticas de backend moderno, arquitetura limpa e design modular.  
-A cada etapa, pretendo documentar os avanços no **GitHub** e compartilhar aprendizados no **LinkedIn**.
-
----
-
-## 🧑‍💻 Autor
-
-**Samuel Figueiredo**  
-📍 PUC Minas — Sistemas de Informação  
-🔗 [LinkedIn](https://linkedin.com/in/samuelfigueired)  
-💻 [GitHub](https://github.com/samuelfigueired)
-
----
-
-## 📸 Prévia
-
-<img width="1237" height="665" alt="swagger" src="https://github.com/user-attachments/assets/00836eaf-609a-4d27-a99d-a78d168a1947" />
-<img width="1176" height="959" alt="estrutura" src="https://github.com/user-attachments/assets/1eeb2a24-f972-4137-a66a-42dd6edcbd84" />
-<img width="1365" height="845" alt="postman" src="https://github.com/user-attachments/assets/700592b0-fdb3-4eae-bd22-80288f41273a" />
-
-
----
-
-<p align="center">
-  Feito com 💚 por <b>Samuel Figueiredo</b> — Aprendizado contínuo em Java & Spring 🚀
-</p>
+## 📚 Aprendizados
+- Clean Architecture
+- Separação de responsabilidades
+- Autenticação e autorização
+- Migrations e versionamento de banco

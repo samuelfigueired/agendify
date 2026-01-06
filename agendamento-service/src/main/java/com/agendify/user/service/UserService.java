@@ -2,6 +2,8 @@ package com.agendify.user.service;
 
 import com.agendify.user.dto.UserInDTO;
 import com.agendify.user.dto.UserOutDTO;
+import com.agendify.user.entities.enums.UserRole;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -16,4 +18,6 @@ public interface UserService {
     UserOutDTO atualizar(Long id, UserInDTO dto);
 
     void deletar(Long id);
+
+    UserOutDTO atualizarRole(Long id, UserRole role);
 }

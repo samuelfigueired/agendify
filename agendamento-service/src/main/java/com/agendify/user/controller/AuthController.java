@@ -23,9 +23,7 @@ public class AuthController {
 
     private final AuthenticationManager authManager;
     private final JwtService jwtService;
-    private final UserRepository repository;
-    private final PasswordEncoder encoder;
-    private final UserMapper mapper;
+    private final UserRepository userRepository;
     private final UserService userService;
 
     @PostMapping("/login")
@@ -35,24 +33,19 @@ public class AuthController {
                 new UsernamePasswordAuthenticationToken(dto.getEmail(), dto.getSenha())
         );
 
-        User user = repository.findByEmail(dto.getEmail())
+        User user = userRepository.findByEmail(dto.getEmail())
                 .orElseThrow(() -> new RuntimeException("Credenciais inválidas"));
 
-        String token = jwtService.gerarToken(user.getEmail());
+        String token = jwtService.gerarToken(
+                user.getEmail(),
+                user.getRole().name()
+        );
 
         return ResponseEntity.ok(new TokenDTO(token));
     }
 
-
     @PostMapping("/register")
     public ResponseEntity<UserOutDTO> register(@RequestBody UserInDTO dto) {
-
-        if (repository.existsByEmail(dto.getEmail())) {
-            throw new RuntimeException("E-mail já registrado.");
-        }
-
-        UserOutDTO saved = userService.criar(dto);
-
-        return ResponseEntity.ok(saved);
+        return ResponseEntity.ok(userService.criar(dto));
     }
 }

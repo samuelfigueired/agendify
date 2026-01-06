@@ -2,10 +2,13 @@ package com.agendify.user.controller;
 
 import com.agendify.user.dto.UserInDTO;
 import com.agendify.user.dto.UserOutDTO;
+import com.agendify.user.dto.UserRoleDTO;
 import com.agendify.user.service.UserService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -54,4 +57,15 @@ public class UserController {
         service.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PatchMapping("/{id}/role")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<UserOutDTO> atualizarRole(
+            @PathVariable Long id,
+            @RequestBody UserRoleDTO dto
+    ) {
+        return ResponseEntity.ok(service.atualizarRole(id, dto.getRole()));
+    }
+
+
 }

@@ -3,6 +3,7 @@ package com.agendify.user.service.impl;
 import com.agendify.user.dto.UserInDTO;
 import com.agendify.user.dto.UserOutDTO;
 import com.agendify.user.entities.User;
+import com.agendify.user.entities.enums.UserRole;
 import com.agendify.user.exceptions.UserNotFoundException;
 import com.agendify.user.mapper.UserMapper;
 import com.agendify.user.repositories.UserRepository;
@@ -24,8 +25,16 @@ public class UserServicePadrao implements UserService {
 
     @Override
     public UserOutDTO criar(UserInDTO dto) {
+
+        if (repository.existsByEmail(dto.getEmail())) {
+            throw new IllegalArgumentException("Email já cadastrado");
+        }
+
         User user = mapper.toEntity(dto);
+
         user.setSenha(encoder.encode(dto.getSenha()));
+        user.setRole(UserRole.USER);
+        user.setAtivo(true);
 
         return mapper.toOutDTO(repository.save(user));
     }
@@ -48,8 +57,13 @@ public class UserServicePadrao implements UserService {
         User user = repository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
 
-        user.setNome(dto.getNome());
-        user.setEmail(dto.getEmail());
+        if (dto.getNome() != null && !dto.getNome().isBlank()) {
+            user.setNome(dto.getNome());
+        }
+
+        if (dto.getEmail() != null && !dto.getEmail().isBlank()) {
+            user.setEmail(dto.getEmail());
+        }
 
         if (dto.getSenha() != null && !dto.getSenha().isBlank()) {
             user.setSenha(encoder.encode(dto.getSenha()));
@@ -65,4 +79,15 @@ public class UserServicePadrao implements UserService {
 
         repository.delete(user);
     }
+
+    @Override
+    public UserOutDTO atualizarRole(Long id, UserRole role) {
+        User user = repository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException(id));
+
+        user.setRole(role);
+
+        return mapper.toOutDTO(repository.save(user));
+    }
+
 }
